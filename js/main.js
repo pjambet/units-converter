@@ -12,7 +12,7 @@
       kilometersToMilesRatio = 1.60934;
 
   $distanceMetric.addEventListener('input', function(event) {
-    distanceInMiles = this.value * kilometersToMilesRatio;
+    distanceInMiles = this.value / kilometersToMilesRatio;
     $distanceImperial.value = distanceInMiles;
     distanceInMeters = this.value * 1000;
     calculatePace();
@@ -20,7 +20,7 @@
   });
 
   $distanceImperial.addEventListener('input', function(event) {
-    distanceInMeters = this.value / kilometersToMilesRatio;
+    distanceInMeters = this.value * kilometersToMilesRatio;
     $distanceMetric.value = distanceInMeters;
     distanceInMeters = distanceInMeters * 1000;
     calculatePace();

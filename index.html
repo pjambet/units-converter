@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <form class="metric">
+          <legend>Pace calculator</legend>
+          <div>
+            <label for="distance-metric">Distance (km)</label>
+            <input type="number" id="distance-metric">
+          </div>
+
+          <div id="projected-pace-metric"><span id="pace-metric"></span> min / km</div>
+          <div id="projected-speed-metric"><span id="speed-metric"></span> km / hour</div>
+        </form>
+
+        <form class="imperial">
+          <legend>Pace calculator</legend>
+          <div>
+            <label for="distance-imperial">Distance (miles)</label>
+            <input type="number" id="distance-imperial">
+          </div>
+          <div id="projected-pace-imperial"><span id="pace-imperial"></span> min / mile</div>
+          <div id="projected-speed-imperial"><span id="speed-imperial"></span> mile / hour</div>
+        </form>
+        <div>
+          <label for="finish-time">Finish time ((hh):mm:(ss))</label>
+          <input type="text" id="finish-time">
+        </div>
+
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

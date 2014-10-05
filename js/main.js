@@ -60,7 +60,7 @@
     // 10 km, 1h => 1000m / 360s
     // 10000m, 3600s
     var metricSpeed = Math.round((dataObject.distanceInMeters / 1000) / (dataObject.finishTimeInSeconds / 3600));
-    var imperialSpeed = Math.round((dataObject.distanceInMeters * kilometersToMilesRatio / 1000) / (dataObject.finishTimeInSeconds / 3600));
+    var imperialSpeed = Math.round((dataObject.distanceInMeters / kilometersToMilesRatio / 1000) / (dataObject.finishTimeInSeconds / 3600));
     $speedMetric.value = metricSpeed;
     $speedImperial.value = imperialSpeed;
   };

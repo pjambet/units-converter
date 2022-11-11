@@ -81,11 +81,11 @@
     };
 
     var metricPace = function() {
-        return Math.round(dataObject.finishTimeInSeconds / dataObject.distanceInMeters * 1000 / 60 * 100) / 100.0;
+        return Math.floor(dataObject.finishTimeInSeconds / dataObject.distanceInMeters * 1000.0);
     };
 
     var imperialPace = function() {
-        return Math.round(dataObject.finishTimeInSeconds / dataObject.distanceInMeters * 1000 / 60 * 100) / 100.0 * kilometersToMilesRatio;
+        return Math.floor(dataObject.finishTimeInSeconds / dataObject.distanceInMeters * 1000.0 * kilometersToMilesRatio);
     };
 
     var calculateSpeed = function() {
@@ -105,18 +105,16 @@
     var convertDecimalToTime = function(decimalValue) {
         var time = "",
             components = [];
-        var hours = Math.floor(decimalValue / 60);
+        var hours = Math.floor(decimalValue / 3600);
         if (hours > 0) {
             components.push(hours);
         }
-        var minutes = Math.floor(decimalValue % 60);
+        var minutes = Math.floor((decimalValue % 3600) / 60);
         if (minutes > 0) {
             components.push(minutes);
         }
-        var seconds = Math.round((decimalValue % 1) * 60);
-        if (seconds > 0) {
-            components.push(seconds);
-        }
+        var seconds = decimalValue % 60;
+        components.push(seconds);
         console.log(decimalValue);
         console.log(components);
         return time + components.map(function(item, i) {
